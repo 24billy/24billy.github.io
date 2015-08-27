@@ -1,0 +1,139 @@
+<!-- 壽頁資訊 -->
+<!DOCTYPE html>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#homework" aria-controls="homework" role="tab" data-toggle="tab">作業</a></li>
+    <li role="presentation"><a href="#intro" aria-controls="intro" role="tab" data-toggle="tab">簡介</a></li>
+    <li role="presentation"><a href="#other" aria-controls="other" role="tab" data-toggle="tab">其他</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="homework">
+        <span class="label label-primary">作業1--基本html tag使用</span>
+        <div>
+            <p>還記得學到的幾個簡單標籤&lt;h1&gt;、&lt;p&gt;、&lt;input&gt;、&lt;ul&gt;、&lt;li&gt;、&lt;div&gt;、&lt;input&gt;、&lt;button&gt;、&lt;hr&gt;、&lt;br&gt;</p>
+            <p>試著利用以上標籤完成與下面相同的畫面配置：(不用加入CSS樣式)</p>
+            <a href="template.html" target="_blank">樣版頁面(請下載此頁面並使用bracket編輯)</a>
+            <div class="bg-success">
+                <h1>六書</h1>
+                <hr>
+                <ul>
+                    <li>象形</li>
+                    <li>指事</li>
+                    <li>會意</li>
+                    <li>形聲</li>
+                    <li>轉注</li>
+                    <li>假借</li>
+                </ul>
+                <br>
+                <h3>請問中文字的主流，也是中文裡最多的造字方式為六書的哪一種？</h3>
+                <input type="text" placeholder="請在此輸入答案" id="sixBooks"><button type="button" id="buttonSixBooks">送出</button>
+            </div>
+
+        </div>
+
+        <hr>
+        <span class="label label-primary">作業2--簡單css應用</span>
+        <p>第一次上課只教到兩個css的屬性：</p>
+        <code>width:400px; 該標籤的寬度。</code>
+        <code>float:left; 該標籤浮動於畫面的位置。</code>
+        <p>這裡再教兩個新的屬性：background-color，也就是背景顏色、height，高度</p>
+        <code>background-color: blue; 屬性值可以打英文也可以打色碼</code>
+        <code>height:400px，屬性值就是高度</code>
+        <p>試著完成下面的網頁，顏色可自訂，相鄰的區塊請不要使用一樣的顏色，但是各標籤的相對位置要正確。</p>
+        <div style="width:280px;height:400px;background-color:gray;">
+            <div style="width:100%;height:30px;background-color:yellow;">
+                這是導覽列
+            </div>
+            <div style="width280px;height:340px">
+                <div style="width:100px;background-color:green;float:left;">
+                    <ul>
+                        <li>選項一</li>
+                        <li>選項二</li>
+                        <li>選項三</li>
+                        <li>選項四</li>
+                    </ul>
+                </div>
+                <div style="width:180px;height:340px;background-color:pink;float:right;">
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+                        
+                    </div>
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+
+                    </div>
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+
+                    </div>
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+
+                    </div>
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+
+                    </div>
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+
+                    </div>
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+
+                    </div>
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+
+                    </div>
+                    <div style="width:30px;height:30px;float:left;background-color:white;margin: 1em;">
+
+                    </div>
+                </div>
+            </div>
+            <div style="width:100%;height:30px;background-color:yellow;">
+                <p>Footer Here</p>
+            </div>
+            <br>
+        </div>
+        <hr>
+        <span class="label label-primary">作業3</span>
+        <div>
+
+        </div>
+
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="intro">
+        <h3 class="label label-primary">網站簡介</h3>
+        <ol>
+            <li>
+                <h3>什麼是網站，由什麼東西構成？</h3>
+                <p>網站由幾個元素構成：(一)html、(二)CSS樣式、(三)javascript凾式。</p>
+                <p>html是一種網頁的語言，由各種標籤組成。</p>
+                <p>CSS樣式是網頁的裝飾工具，處理視覺的效果。</p>
+                <p>javascript是網頁事件的控制器，處理使用者操作後的邏輯和結果。</p>
+            </li>
+            <li>
+                <h3>看看Google的結構吧，使用Chrome的除錯模式(F12)</h3>
+                <h3>
+                    <a href="http://www.google.com" target="_blank">Google 首頁</a>
+                </h3>
+            </li>
+        </ol>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="other">
+        <h3 class="label label-primary">其他</h3>
+        <p>目前沒東西。</p>
+    </div>
+</div>    
+
+<script>
+    var buttonSixBook = $("button#buttonSixBooks");
+    buttonSixBook.on("click",function(){
+        var sixBooks = $("input#sixBooks");
+        if( sixBooks.val() == "形聲") {
+            alert("恭喜你，答對了！");
+        } else {
+            alert("答錯了！再想想。");
+        }
+
+    });
+
+</script>
+
+</html>
