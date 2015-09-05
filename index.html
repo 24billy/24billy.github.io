@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>24Billy</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link href="bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- fontAwesome -->
+        <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css">
+    </head>
+    <style>
+        body > .container{
+            padding-top: 60px;
+            padding-bottom: 90px;
+        }
+
+        .vcenter {
+
+            vertical-align: middle;
+
+        }
+    </style>
+
+
+    <body>
+        
+        <div>
+            <div>
+                <div></div>
+            </div>
+            
+        </div>
+        
+        <div class="container">
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">24Billy</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a target="home.html">首頁</a></li>
+                            <li><a target="develope.html">工作經驗</a></li>
+                            <li><a target="about.html">專長</a></li>
+                            <li><a target="homework.html">興趣</a></li>
+                            <li class="dropdown">
+                                <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">課程清單 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a target="lesson1.html">Lesson 1</a></li>
+                                    <li><a target="lesson2.html">Lesson 2</a></li>
+                                    <li><a target="lesson3.html">Lesson 3</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">建置中</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+
+            <!-- Begin page content -->
+            <div class="container" id="main">
+
+            </div>
+
+            <!-- Begin footer -->
+
+            <footer class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="row" style="padding:5px">
+                    <div style="float:right;padding-right:50px;">
+                        <img src="images/QRCode.png" width="50px"></img>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-muted text-center">&#169; 2015 Billy SHIH All Rights Reserved</div>
+                    </div>
+                </div>
+            </footer>
+
+
+            <!-- Hidden page List-->
+            <ul class="list-side hidden">
+                <li><a target="home.html" >home</a></li>
+                <li><a target="develope.html" >develope</a></li>
+                <li><a target="about.html" >about</a></li>
+                <li><a target="homework.html" >homework</a></li>
+                <li><a target="lesson1.html" >lesson1</a></li>
+                <li><a target="lesson2.html" >lesson2</a></li>
+                <li><a target="lesson3.html" >lesson3</a></li>
+                <li><a href="http://www.google.com" target="_blank" >google</a></li>
+            </ul>
+        </div>
+    </body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="scripts/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+        $( document ).ready(function() {
+            $.get("home.html",function(data){ //初始將home.html include div#main
+                $("#main").html(data);
+            })
+
+        });
+
+        $('#navbar ul li a').on('click',function(){
+            if($(this).hasClass('dropdown-toggle')){
+                return;
+            }
+
+            // 改變navbar的選取狀態
+            removeAllActiveLi();
+            $(this).parent().addClass('active');
+
+
+            // 取得目前點選的target
+            var $this = $(this);
+            var _clickTab = $this.attr('target');
+
+            $.get(_clickTab,function(data){
+                $("#main").html(data); 
+            });
+        });
+
+        function removeAllActiveLi(){
+            $('#navbar ul li').removeClass('active');
+        }
+
+    </script>
+</html>
