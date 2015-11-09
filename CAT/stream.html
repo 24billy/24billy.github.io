@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        大腿抬高
+        起始姿勢：坐姿
+    </div>
+    <div class="panel-body">
+        <div class="row selection">
+            <div class="col-md-4 col-xs-12">
+                <input type="button" id="selectOne" value="0：無法執行測試動作" target="result.html">
+            </div>
+
+            <div class="col-md-8 col-xs-12">
+                <input type="button" id="selectTwo" value="1：可完成部份動作；或可完成所有動作，但動作模式與正常有明顯差異" target="result.html">
+            </div>
+            <div class="col-md-8 col-xs-12">
+                <input type="button" id="selectThree" value="2：在坐姿下彎曲髖關節，抬得越高越好，與健側相似" target="result.html">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var selections = $(".selection input");
+    selections.on("click",function(){
+        // 取得目前點選的target
+        var $this = $(this);
+        var _clickTab = $this.attr('target');
+
+        $.get(_clickTab,function(data){
+            $("#main").html(data); 
+        });
+    });
+
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
+
+</html>

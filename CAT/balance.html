@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        依您的判斷，受測者能否站立或行走？
+    </div>
+    <div class="panel-body">
+        <div class="row selection">
+            <div class="col-md-4 col-xs-12">
+                <input type="button" id="selectOne" value="不可站立" target="result.html">
+            </div>
+
+            <div class="col-md-8 col-xs-12">
+                <input type="button" id="selectTwo" value="可站立但無法行走" target="result.html">
+            </div>
+            <div class="col-md-8 col-xs-12">
+                <input type="button" id="selectThree" value="可以行走" target="result.html">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var selections = $(".selection input");
+    selections.on("click",function(){
+        // 取得目前點選的target
+        var $this = $(this);
+        var _clickTab = $this.attr('target');
+
+        $.get(_clickTab,function(data){
+            $("#main").html(data); 
+        });
+    });
+
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
+
+</html>
