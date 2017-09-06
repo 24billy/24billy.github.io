@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cat-Fas</title>
+
+        <meta charset="UTF-8">
+        <meta name="description" content="Cat_Fast">
+        <meta name="keywords" content="Cat_Fas">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- jquery-3.2.1 -->
+        <script src="js/jquery/jquery-3.2.1.js"></script>
+
+        <!-- popper-1.11.0 -->
+        <script src="js/popper/popper.min.js"></script>
+
+        <!-- bootstrap-4.0.0-beta-->
+        <script src="js/bottstrap/bootstrap.js"></script>
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="css/font-awesome.css" rel="stylesheet">
+
+        <!-- custom style -->
+        <script src="js/scripts.js"></script>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body id="loginPage">
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-12">
+                    <h1 class="text-center">
+                        <div class="text-light">
+                            <i class="fa fa-fw fa-bolt"></i>
+                            登入Cat-Fas
+                        </div>
+                    </h1>
+                </div>
+                <div class="col-md-6 col-sm-8 col-xs-10">
+                    <form id="needs-validation">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-fw fa-user"></i></div>
+                                <input name="username" type="text" class="form-control" placeholder="username" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-fw fa-key"></i>
+                                </div>
+                                <input name="password" type="password"
+                                       class="form-control" placeholder="password" required>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-success pull-right">
+                            <i class="fa fa-fw fa-sign-in"></i>
+                            登入
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            (function() {
+                "use strict";
+                window.addEventListener("load", function() {
+                    var form = document.getElementById("needs-validation");
+
+                    form.addEventListener("submit", function(event) {
+                        if (form.checkValidity() == false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            event.preventDefault();
+
+                            verify();
+                        }
+
+                        form.classList.add("was-validated");
+                    }, false);
+                }, false);
+            }());
+
+            // 身份認證
+            function verify() {
+                var username = $("input[name=username]").val();
+                var password = $("input[name=password]").val();
+
+                if (username && username != '' && password && password != '') {
+                    if ('admin' == username) {
+                        login('admin');
+                    } else {
+                        login('examiner');
+                    }
+                }
+            }
+
+            // 決定登入角色
+            function login(role) {
+                if ('admin' == role) {
+                    window.location.href = "main.html";
+                } else {
+                    window.location.href = "main_examiner.html";
+                }
+            }
+        </script>
+    </body>
+</html>
