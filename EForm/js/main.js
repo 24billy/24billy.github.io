@@ -22,6 +22,8 @@
     var input = $('.validate-input .input100');
 
     $('.validate-form').on('submit',function(){
+        window.location.href = "main.html";
+        /**
         var check = true;
 
         for(var i=0; i<input.length; i++) {
@@ -32,6 +34,7 @@
         }
 
         return check;
+        */
     });
 
 
