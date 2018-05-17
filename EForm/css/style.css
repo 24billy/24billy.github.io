@@ -1,0 +1,30 @@
+body {
+    font-family: Microsoft JhengHei ;
+    background-color: #f2f2f2;
+}
+
+#content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #ffffff;
+}
+
+#loginPage {
+    padding-top:40px;
+    background-color: #f2f2f2;
+}
+
+#insertButton,#messageButton,#updateButton,#deleteButton,#resultButton {
+    display:none;
+}
+
+.hidden-item {
+    display:none;
+}
+
+.marginButton {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+}

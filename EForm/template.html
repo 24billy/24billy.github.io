@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cat-Fas</title>
+
+        <meta charset="UTF-8">
+        <meta name="description" content="Test">
+        <meta name="keywords" content="Test">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- jquery-3.2.1 -->
+        <script src="js/jquery/jquery-3.2.1.js"></script>
+
+        <!-- popper-1.11.0 -->
+        <script src="js/popper/popper.min.js"></script>
+
+        <!-- bootstrap-4.0.0-beta-->
+        <script src="js/bottstrap/bootstrap.js"></script>
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+
+        <!-- datatable-1.10.15-->
+        <script src="js/datatable/jquery.dataTables.min.js"></script>
+        <link href="css/datatable/jquery.dataTables.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="css/font-awesome.css" rel="stylesheet">
+
+        <!-- custom scripts style -->
+        <script src="js/scripts.js"></script>
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            #setBackground {
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx25kXhv7-PHAbQYnPRi4u1tZzuMquPPBF3NDRgP2eVqv1mRNb-5yM5OA');
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- BEGIN navbar -->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="template.html">TestArea</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="member.html">訪員管理</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="organization.html">單位管理</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="testData.html">資料管理</a>
+</li>
+</ul>
+<button class="btn btn-outline-success my-2 my-sm-0" onclick="logout()">登出</button>
+</div>
+-->
+        </nav>
+        <!-- End navbar -->
+
+        <!-- Begin Content -->
+        <div class="container" id="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn-success" id="testButton">Test</button>
+                </div>
+                <div class="col-md-12">
+                    <div>
+                        1:<input value = "0" tabindex=1 class="item">
+                    </div>
+                    <div>
+                        2:<input value = "1" tabindex=3 class="item">
+                    </div>
+                    <div>
+                        3:<input value = "2" tabindex=2 class="item">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <select id="select">
+                        <option>123</option>
+                        <option>
+                            421
+                        </option>
+                    </select>
+                </div>
+                <div style="height:1000px;overflow-y:scroll">
+                    <div id="setBackground">
+                        <ul style="color:white;">
+                            <li>An apple a day.</li>
+                            <li>Keeps the doctor away.</li>
+                            <li>Actions speak louder than words.</li>
+
+                        </ul>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        <!-- Begin Content -->
+
+        <!-- BEGIN footer -->
+        <nav class="navbar navbar-dark bg-dark navbar-fixed-bottom hidden-sm" role="navigation">
+            <div class="container text-center"> 
+                <h5 style="color: white;">
+                    Copyright (c) 2017 Billy Shih All Rights Reserved.
+                </h5>
+            </div>
+        </nav>
+        <!-- END footer -->
+    </body>
+</html>
+<script>
+    $("#testButton").on("click", function() {
+        console.log($("select option:selected").html().length);
+        console.log($.trim($("select option:selected").html()).length);
+        //doSomething();
+    })
+
+    $("input").keyup(function(){
+        //doSomething();
+        var index = $(this).attr("tabindex");
+        var targetIndex = parseInt(index) + 1;
+    });
+
+    function doSomething() {
+        var index = $(this).attr("tabindex");
+        var targetIndex = parseInt(index) + 1;
+
+        $('input[tabindex=' + targetIndex + ']').focus();
+        if( targetIndex > 3 ) {
+            $('input[tabindex=1]').focus();
+        }
+    }
+
+    function doSomething2(target) { 
+        var index = $(this).attr("tabindex");
+        var targetIndex = parseInt(index) + 1;
+
+        console.log($(".item"));
+    }
+
+</script>

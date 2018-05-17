@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cat-Fas</title>
+
+        <meta charset="UTF-8">
+        <meta name="description" content="Test">
+        <meta name="keywords" content="Test">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- jquery-3.2.1 -->
+        <script src="js/jquery/jquery-3.2.1.js"></script>
+
+        <!-- popper-1.11.0 -->
+        <script src="js/popper/popper.min.js"></script>
+
+        <!-- bootstrap-4.0.0-beta-->
+        <script src="js/bottstrap/bootstrap.js"></script>
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+
+        <!-- datatable-1.10.15-->
+        <script src="js/datatable/jquery.dataTables.min.js"></script>
+        <link href="css/datatable/jquery.dataTables.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="css/font-awesome.css" rel="stylesheet">
+
+        <!-- custom scripts style -->
+        <script src="js/scripts.js"></script>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body onkeydown="check();" onkeyup="getResult()">
+        <!-- BEGIN navbar -->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="template.html">TestArea</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="member.html">訪員管理</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="organization.html">單位管理</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="testData.html">資料管理</a>
+</li>
+</ul>
+<button class="btn btn-outline-success my-2 my-sm-0" onclick="logout()">登出</button>
+</div>
+-->
+        </nav>
+        <!-- End navbar -->
+
+        <!-- Begin Content -->
+        <div class="container" id="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-default btn-lg">
+                        <i class="fa fa-android" aria-hidden="true" id="android-icon"></i>
+                    </button>
+                    <style>
+                        #android-icon {
+                            color:darkseagreen;
+                        }
+                    </style>
+                    <button class="btn-success" id="testButton">Test</button>
+                </div>
+            </div>
+            <div class="row" id="messageGrid">
+                
+            </div>
+        </div>
+        <!-- Begin Content -->
+
+        <!-- BEGIN footer -->
+        <nav class="navbar navbar-dark bg-dark navbar-fixed-bottom hidden-sm" role="navigation">
+            <div class="container text-center"> 
+                <h5 style="color: white;">
+                    Copyright (c) 2017 Billy Shih All Rights Reserved.
+                </h5>
+            </div>
+        </nav>
+        <!-- END footer -->
+    </body>
+</html>
+<script>
+    var isKeyDone = false;
+    
+    function check() {
+        // z = 90 x = 88
+        if(event.keyCode == 90) {
+            isKeyDone = true;
+        }
+    }
+    
+    function getResult() {
+        if (isKeyDone && event.keyCode == 88) {
+            console.log("triggered");
+        }
+        
+        if(event.keyCode == 90) {
+            isKeyDone = false;
+        }
+    }
+    $("#loginType").change(
+        function(){
+        if ($("#loginType").val() == "account") {
+            $('#inputAccount').attr("disabled", false);
+            $('#inputEmail').attr("disabled", true);
+        } else {
+            $('#inputAccount').attr("disabled", true);
+            $('#inputEmail').attr("disabled", false);
+        }
+    });
+
+    $("#testButton").on("click", function() {
+        var startDate = new Date("2017/12/05");
+        var startDate2 = new Date("2017/12/04");
+        console.log(startDate);
+        console.log(startDate2);
+        console.log(startDate - startDate2);
+        console.log(new Date());
+        console.log(startDate - new Date());
+        console.log(startDate - new Date() > 86400000);
+        console.log(new Date() > 86400000);
+        console.log(new Date() > 16400000);
+        
+        $.ajax({
+            url :"http://10.64.70.46:50533/InfoAPI/Tools/getConvRecord",
+            //url :"http://10.64.70.46:50533/InfoAPI/Tools/getHistoryRecord",
+            data : {
+                //session_id:"fac30ed8670d40278a0351f3b15f73c4"
+                session_id:"332122"
+                //session_id:"0vhyZ8mpf29cLPswTQVmSd4jTSd3CY5G3Rggy8pQbl9nPnjswScL!-1396299644"
+                //,startYearMonth:"201711"
+                            
+            },
+            type : "POST",
+            error : function(e) {
+                console.log("請重新整理");
+            },
+            success : function(data) {
+                console.log("success");
+                var jsonData = JSON.parse(data);
+                var count = 1;
+                for (key in jsonData) {
+                    var visitTime = jsonData[key].visitTime;
+                    var startTime = jsonData[key].startTime || visitTime || "";
+                    var endTime = jsonData[key].endTime || visitTime ||"";
+                    
+                    console.log(jsonData[key]);
+                    var $message = '<div class="col-md-12"  id=data' + count + '>';
+
+                    // 客戶問題
+                    var isSolved = jsonData[key].question.indexOf('faqvote') == 0;
+                    if (isSolved) {
+
+                    } else {
+                        $message += '<div ><b style="color:green;">我</b>：' +  startTime + '</div>';
+                        $message +='<div style="color:blue;">  ' + jsonData[key].question.split('[').join('<').split(']').join('>').split('link').join('div') + '</div>';
+                    }
+
+
+                    // 機器人回答
+                    $message += '<div ><b style="color:skyblue;">webrobot</b>：' +  endTime + '</div>';
+                    $message +='<div style="color:blue;">  ' + jsonData[key].answer.split('[').join('<').split(']').join('>').split('link').join('div') + '</div><br>';
+                    $("#messageGrid").append($message);
+
+                    count++;
+                }
+
+            }
+        });    
+
+    })
+
+    $("input").keyup(function(){
+        //doSomething();
+        var index = $(this).attr("tabindex");
+        var targetIndex = parseInt(index) + 1;
+    });
+
+    function doSomething() {
+        var index = $(this).attr("tabindex");
+        var targetIndex = parseInt(index) + 1;
+
+        $('input[tabindex=' + targetIndex + ']').focus();
+        if( targetIndex > 3 ) {
+            $('input[tabindex=1]').focus();
+        }
+    }
+
+    function doSomething2(target) { 
+        var index = $(this).attr("tabindex");
+        var targetIndex = parseInt(index) + 1;
+
+        console.log($(".item"));
+    }
+
+</script>
