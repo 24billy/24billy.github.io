@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “http://www.w3.org/TR/html4/strict.dtd”>
 <html>
     <head>
         <title>mr237Form</title>
@@ -33,7 +33,7 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
         <!-- BEGIN navbar -->
         <nav class="navbar navbar-dark bg-info navbar-expand-lg">
             <a class="navbar-brand" href="main.html">eForm</a>
@@ -44,789 +44,831 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="mr237.html">MR237-綜合評量表</a>
+                        <a class="nav-link" href="subjectManage.html">受試者管理</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mr239.html">MR239-職能治療評量表</a>
+                        <a class="nav-link" href="accountManage.html">帳號管理</a>
                     </li>
                 </ul>
                 <button class="btn btn-outline-warning my-2 my-sm-0" onclick="logout()">登出</button>
             </div>
         </nav>
         <!-- End navbar -->
+        <Style>
+            .custom-pagination {
+                border: solid skyblue 1px;
+                background-color: white;
+                opacity:0.65;
+            }
+        </Style>
+
+        <div style="position:fixed;z-index:100000;top:10px;right:100px;margin-left:90px;" id="myScrollspy">
+            <ul class="  nav nav-pills">
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section0">top</a>
+                </li>
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section1">1</a>
+                </li>
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section2">2</a>
+                </li>
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section3">3</a>
+                </li>
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section4">4</a>
+                </li>
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section5">5</a>
+                </li>
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section6">6</a>
+                </li>
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section7">7</a>
+                </li>
+                <li class="nav-item custom-pagination">
+                    <a class="nav-link" href="#section8">8</a>
+                </li>
+            </ul>
+        </div>
 
         <!-- Begin Content -->
         <div class="container" id="content" style="min-height:500px;">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="mr237.html">MR237資料管理</a></li>
-                        <li class="breadcrumb-item active text-dark">新增病歷(精神科職能治療綜合評量表)</li>
+                        <li class="breadcrumb-item" onclick="showSubject();">
+                            受試者管理
+                        </li>
+                        <li class="breadcrumb-item" onclick="showData();">病歷歷管理</li>
+                        <li class="breadcrumb-item active">MR237資料管理</li>
                     </ol>
                 </div>
+                <form id="mr237form">
+                    <div class="col-md-12" id="section0">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                基本資料
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">病歷號碼</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"  placeholder="病歷號碼">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">姓名</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"  placeholder="姓名">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">性別</label>
+                                    <div class="col-sm-10">
+                                        <select class="custom-select">
+                                            <option selected disabled>請選擇</option>
+                                            <option value="1">男</option>
+                                            <option value="2">女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">生日</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control datepicker">
+                                    </div>
+                                </div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            基本資料
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">病歷號碼</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control"  placeholder="病歷號碼">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">姓名</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control"  placeholder="姓名">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">性別</label>
-                                <div class="col-sm-10">
-                                    <select class="custom-select">
-                                        <option selected disabled>請選擇</option>
-                                        <option value="1">男</option>
-                                        <option value="2">女</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">生日</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control datepicker">
-                                </div>
-                            </div>
 
-
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">科別</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="科別">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">病床</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="病床">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">醫師</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" placeholder="醫師">
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
-
-                <div class="col-md-12">
-                    <br>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            第一部份--感覺統合(Sensory Integration)
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">感覺器官：</label>
-                                <div class="col-sm-10">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-1" value="1">
-                                        <label class="form-check-label">
-                                            1.功能正常
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-1" value="2">
-                                        <label class="form-check-label">
-                                            2.略有障礙不明顯
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-1" value="3">
-                                        <label class="form-check-label">
-                                            3.部分障礙有影響
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-1" value="4">
-                                        <label class="form-check-label">
-                                            4.感覺障礙影響大
-                                        </label>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">科別</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="科別">
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">肢體動作：</label>
-                                <div class="col-sm-10">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-2" value="1">
-                                        <label class="form-check-label">
-                                            1.肢體活動度正常
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-2" value="2">
-                                        <label class="form-check-label">
-                                            2.部份動作不協調
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-2" value="3">
-                                        <label class="form-check-label">
-                                            3.部分肢體障礙
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-2" value="4">
-                                        <label class="form-check-label">
-                                            4.肢體障礙影響大
-                                        </label>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">病床</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="病床">
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">語言表達：</label>
-                                <div class="col-sm-10">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-3" value="1">
-                                        <label class="form-check-label">
-                                            1.發音清晰易溝通
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-3" value="2">
-                                        <label class="form-check-label">
-                                            2.音量、速度稍差
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-3" value="3">
-                                        <label class="form-check-label">
-                                            3.部分語言障礙
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-3" value="4">
-                                        <label class="form-check-label">
-                                            4.語言障礙難溝通
-                                        </label>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">醫師</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="醫師">
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">體能狀況：</label>
-                                <div class="col-sm-10">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-4" value="1">
-                                        <label class="form-check-label">
-                                            1.良好
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-4" value="2">
-                                        <label class="form-check-label">
-                                            2.尚可
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-4" value="3">
-                                        <label class="form-check-label">
-                                            3.稍差
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-4" value="4">
-                                        <label class="form-check-label">
-                                            4.極差
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-6 col-form-label">褚氏手部靈巧度測驗，施測時間：一分鐘。慣用手：</label>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-2" value="1">
-                                        <label class="form-check-label">
-                                            右手
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-1-2" value="2">
-                                        <label class="form-check-label">
-                                            左手
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">1.分數統計：(答題數/錯誤數/總分)</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder="答題數">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder="錯誤數">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder="總分">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">2.正確數常模百分比</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="正確數常模百分比">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">3.錯誤率常模百分比</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="錯誤率常模百分比">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">4.注意力等級</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="注意力等級">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">5.評語</label>
-                                <div class="col-sm-6">
-                                    <textarea type="text" class="form-control" placeholder="評語"></textarea>
-                                </div>
-                            </div>
-
+                            </div>                        
                         </div>
                     </div>
 
-                </div>
-
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            第二部份--認知測驗(Cognitive function)
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">Allen cognitive level test：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-2-1" value="1">
-                                        <label class="form-check-label">
-                                            1.automatic actions
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-2-1" value="2">
-                                        <label class="form-check-label">
-                                            2.postural actions
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-2-1" value="3">
-                                        <label class="form-check-label">
-                                            3.manual actions
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-2-1" value="4">
-                                        <label class="form-check-label">
-                                            4.goal-directed actions
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-2-1" value="5">
-                                        <label class="form-check-label">
-                                            5.exploratory actions
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-2-1" value="6">
-                                        <label class="form-check-label">
-                                            6.planned actions
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
+                    <div class="col-md-12">
+                        <br>
                     </div>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-12 col-form-label">褚氏注意力測驗使用手冊</label>
-                                <label class="col-sm-5 col-form-label">1.分數統計：(答題數/錯誤數/總分)</label>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder="答題數">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder="錯誤數">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" placeholder="總分">
-                                </div>
+                    <div class="col-md-12" id="section1">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                第一部份--感覺統合(Sensory Integration)
                             </div>
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">2.正確數常模百分比</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="正確數常模百分比">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">感覺器官：</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-1" value="1">
+                                            <label class="form-check-label">
+                                                1.功能正常
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-1" value="2">
+                                            <label class="form-check-label">
+                                                2.略有障礙不明顯
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-1" value="3">
+                                            <label class="form-check-label">
+                                                3.部分障礙有影響
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-1" value="4">
+                                            <label class="form-check-label">
+                                                4.感覺障礙影響大
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">3.錯誤率常模百分比</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="錯誤率常模百分比">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">4.注意力等級</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="注意力等級">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-5 col-form-label">5.評語</label>
-                                <div class="col-sm-6">
-                                    <textarea type="text" class="form-control" placeholder="評語"></textarea>
-                                </div>
-                            </div>
 
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">肢體動作：</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-2" value="1">
+                                            <label class="form-check-label">
+                                                1.肢體活動度正常
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-2" value="2">
+                                            <label class="form-check-label">
+                                                2.部份動作不協調
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-2" value="3">
+                                            <label class="form-check-label">
+                                                3.部分肢體障礙
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-2" value="4">
+                                            <label class="form-check-label">
+                                                4.肢體障礙影響大
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">語言表達：</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-3" value="1">
+                                            <label class="form-check-label">
+                                                1.發音清晰易溝通
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-3" value="2">
+                                            <label class="form-check-label">
+                                                2.音量、速度稍差
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-3" value="3">
+                                            <label class="form-check-label">
+                                                3.部分語言障礙
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-3" value="4">
+                                            <label class="form-check-label">
+                                                4.語言障礙難溝通
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">體能狀況：</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-4" value="1">
+                                            <label class="form-check-label">
+                                                1.良好
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-4" value="2">
+                                            <label class="form-check-label">
+                                                2.尚可
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-4" value="3">
+                                            <label class="form-check-label">
+                                                3.稍差
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-4" value="4">
+                                            <label class="form-check-label">
+                                                4.極差
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">褚氏手部靈巧度測驗，施測時間：一分鐘。慣用手：</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-2" value="1">
+                                            <label class="form-check-label">
+                                                右手
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-1-2" value="2">
+                                            <label class="form-check-label">
+                                                左手
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">1.分數統計：(答題數/錯誤數/總分)</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" placeholder="答題數">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" placeholder="錯誤數">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" placeholder="總分">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">2.正確數常模百分比</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="正確數常模百分比">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">3.錯誤率常模百分比</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="錯誤率常模百分比">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">4.注意力等級</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="注意力等級">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">5.評語</label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" class="form-control" placeholder="評語"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12" id="section2">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                第二部份--認知測驗(Cognitive function)
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">Allen cognitive level test：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-2-1" value="1">
+                                            <label class="form-check-label">
+                                                1.automatic actions
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-2-1" value="2">
+                                            <label class="form-check-label">
+                                                2.postural actions
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-2-1" value="3">
+                                            <label class="form-check-label">
+                                                3.manual actions
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-2-1" value="4">
+                                            <label class="form-check-label">
+                                                4.goal-directed actions
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-2-1" value="5">
+                                            <label class="form-check-label">
+                                                5.exploratory actions
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-2-1" value="6">
+                                            <label class="form-check-label">
+                                                6.planned actions
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-form-label">褚氏注意力測驗使用手冊</label>
+                                    <label class="col-sm-5 col-form-label">1.分數統計：(答題數/錯誤數/總分)</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" placeholder="答題數">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" placeholder="錯誤數">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" placeholder="總分">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">2.正確數常模百分比</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="正確數常模百分比">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">3.錯誤率常模百分比</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="錯誤率常模百分比">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">4.注意力等級</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="注意力等級">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label">5.評語</label>
+                                    <div class="col-sm-6">
+                                        <textarea type="text" class="form-control" placeholder="評語"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12" id="section3">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                第三部份--心理功能(psychological Function)
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">焦慮調適：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-1" value="1">
+                                            <label class="form-check-label">
+                                                1.良好 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-1" value="2">
+                                            <label class="form-check-label">
+                                                2.尚可
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-1" value="3">
+                                            <label class="form-check-label">
+                                                3.稍差
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-1" value="4">
+                                            <label class="form-check-label">
+                                                4.極差
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">情緒控制：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-2" value="1">
+                                            <label class="form-check-label">
+                                                1.良好 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-2" value="2">
+                                            <label class="form-check-label">
+                                                2.尚可
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-2" value="3">
+                                            <label class="form-check-label">
+                                                3.稍差
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-2" value="4">
+                                            <label class="form-check-label">
+                                                4.極差
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
                         </div>
                     </div>
 
-                </div>
+                    <div class="col-md-12" id="section4">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                第四部份--社會互動(Social Interaction)
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">互動態度：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-1" value="1">
+                                            <label class="form-check-label">
+                                                1.友善易親近
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-1" value="2">
+                                            <label class="form-check-label">
+                                                2.被動、互動較少
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-1" value="3">
+                                            <label class="form-check-label">
+                                                3.互動方式不適當 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-1" value="4">
+                                            <label class="form-check-label">
+                                                4.敵意冷漠不合作
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            第三部份--心理功能(psychological Function)
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">家人關懷：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-2" value="1">
+                                            <label class="form-check-label">
+                                                1.照顧關懷
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-2" value="2">
+                                            <label class="form-check-label">
+                                                2.基本照顧
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-2" value="3">
+                                            <label class="form-check-label">
+                                                3.關係淡漠少照顧
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-2" value="4">
+                                            <label class="form-check-label">
+                                                4.無家人或不照顧
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">人際互動關係：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-3" value="1">
+                                            <label class="form-check-label">
+                                                1.良好 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-3" value="2">
+                                            <label class="form-check-label">
+                                                2.尚可
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-3" value="3">
+                                            <label class="form-check-label">
+                                                3.稍差
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-4-3" value="4">
+                                            <label class="form-check-label">
+                                                4.極差
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">言談溝通能力：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-1" value="1">
+                                            <label class="form-check-label">
+                                                1.良好 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-1" value="2">
+                                            <label class="form-check-label">
+                                                2.尚可
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-1" value="3">
+                                            <label class="form-check-label">
+                                                3.稍差
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-3-1" value="4">
+                                            <label class="form-check-label">
+                                                4.極差
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
                         </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">焦慮調適：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-1" value="1">
-                                        <label class="form-check-label">
-                                            1.良好 
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-1" value="2">
-                                        <label class="form-check-label">
-                                            2.尚可
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-1" value="3">
-                                        <label class="form-check-label">
-                                            3.稍差
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-1" value="4">
-                                        <label class="form-check-label">
-                                            4.極差
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">情緒控制：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-2" value="1">
-                                        <label class="form-check-label">
-                                            1.良好 
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-2" value="2">
-                                        <label class="form-check-label">
-                                            2.尚可
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-2" value="3">
-                                        <label class="form-check-label">
-                                            3.稍差
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-2" value="4">
-                                        <label class="form-check-label">
-                                            4.極差
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>  
                     </div>
-                </div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            第四部份--社會互動(Social Interaction)
+                    <div class="col-md-12" id="section5">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                第五部份--職能角色(Occupational Role)
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-5-1" value="1">
+                                            <label class="form-check-label">
+                                                1.受雇 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-5-1" value="2">
+                                            <label class="form-check-label">
+                                                2.自雇
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-5-1" value="3">
+                                            <label class="form-check-label">
+                                                3.無償(例如志工) 
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-5-1" value="4">
+                                            <label class="form-check-label">
+                                                4.學生
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-5-1" value="5">
+                                            <label class="form-check-label">
+                                                5.家管
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-5-1" value="6">
+                                            <label class="form-check-label">
+                                                6.退休
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-5-1" value="7">
+                                            <label class="form-check-label">
+                                                7.失業
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-5-1" value="8">
+                                            <label class="form-check-label">
+                                                8.其他
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">互動態度：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-1" value="1">
-                                        <label class="form-check-label">
-                                            1.友善易親近
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-1" value="2">
-                                        <label class="form-check-label">
-                                            2.被動、互動較少
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-1" value="3">
-                                        <label class="form-check-label">
-                                            3.互動方式不適當 
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-1" value="4">
-                                        <label class="form-check-label">
-                                            4.敵意冷漠不合作
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">家人關懷：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-2" value="1">
-                                        <label class="form-check-label">
-                                            1.照顧關懷
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-2" value="2">
-                                        <label class="form-check-label">
-                                            2.基本照顧
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-2" value="3">
-                                        <label class="form-check-label">
-                                            3.關係淡漠少照顧
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-2" value="4">
-                                        <label class="form-check-label">
-                                            4.無家人或不照顧
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">人際互動關係：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-3" value="1">
-                                        <label class="form-check-label">
-                                            1.良好 
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-3" value="2">
-                                        <label class="form-check-label">
-                                            2.尚可
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-3" value="3">
-                                        <label class="form-check-label">
-                                            3.稍差
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-4-3" value="4">
-                                        <label class="form-check-label">
-                                            4.極差
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">言談溝通能力：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-1" value="1">
-                                        <label class="form-check-label">
-                                            1.良好 
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-1" value="2">
-                                        <label class="form-check-label">
-                                            2.尚可
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-1" value="3">
-                                        <label class="form-check-label">
-                                            3.稍差
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-3-1" value="4">
-                                        <label class="form-check-label">
-                                            4.極差
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>  
                     </div>
-                </div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            第五部份--職能角色(Occupational Role)
+                    <div class="col-md-12" id="section6">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                第六部份--日常生活功能評量(ADL)
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">生活安排：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-6-1" value="1">
+                                            <label class="form-check-label">
+                                                1.自行安排
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-6-1" value="2">
+                                            <label class="form-check-label">
+                                                2.部分需人提醒
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-6-1" value="3">
+                                            <label class="form-check-label">
+                                                3.部分需人協助
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-6-1" value="4">
+                                            <label class="form-check-label">
+                                                4.完全需人安排
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-6-2" value="1">
+                                            <label class="form-check-label">
+                                                不需接受ADL訓練
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-6-2" value="2">
+                                            <label class="form-check-label">
+                                                需接受ADL訓練
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-5-1" value="1">
-                                        <label class="form-check-label">
-                                            1.受雇 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-5-1" value="2">
-                                        <label class="form-check-label">
-                                            2.自雇
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-5-1" value="3">
-                                        <label class="form-check-label">
-                                            3.無償(例如志工) 
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-5-1" value="4">
-                                        <label class="form-check-label">
-                                            4.學生
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-5-1" value="5">
-                                        <label class="form-check-label">
-                                            5.家管
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-5-1" value="6">
-                                        <label class="form-check-label">
-                                            6.退休
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-5-1" value="7">
-                                        <label class="form-check-label">
-                                            7.失業
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-5-1" value="8">
-                                        <label class="form-check-label">
-                                            8.其他
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
                     </div>
-                </div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            第六部份--日常生活功能評量(ADL)
+                    <div class="col-md-12" id="section7">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                第七部份--休閒活動安排(Leisure)
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label">居家休閒安排：</label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-7-1" value="1">
+                                            <label class="form-check-label">
+                                                1.適當
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-7-1" value="2">
+                                            <label class="form-check-label">
+                                                2.過多
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-7-1" value="3">
+                                            <label class="form-check-label">
+                                                3.過少
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-7-1" value="4">
+                                            <label class="form-check-label">
+                                                4.不適宜
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"></label>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-6-2" value="1">
+                                            <label class="form-check-label">
+                                                不需接受訓練
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="m237-6-2" value="2">
+                                            <label class="form-check-label">
+                                                需接受訓練
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">生活安排：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-6-1" value="1">
-                                        <label class="form-check-label">
-                                            1.自行安排
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-6-1" value="2">
-                                        <label class="form-check-label">
-                                            2.部分需人提醒
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-6-1" value="3">
-                                        <label class="form-check-label">
-                                            3.部分需人協助
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-6-1" value="4">
-                                        <label class="form-check-label">
-                                            4.完全需人安排
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label"></label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-6-2" value="1">
-                                        <label class="form-check-label">
-                                            不需接受ADL訓練
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-6-2" value="2">
-                                        <label class="form-check-label">
-                                            需接受ADL訓練
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
                     </div>
-                </div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            第七部份--休閒活動安排(Leisure)
+                    <div class="col-md-12" id="section8">
+                        <div class="card">
+                            <div class="card-header text-white bg-success">
+                                第八部份--其他測驗評估或臨床觀察
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <textarea style="width:100%"></textarea>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">居家休閒安排：</label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-7-1" value="1">
-                                        <label class="form-check-label">
-                                            1.適當
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-7-1" value="2">
-                                        <label class="form-check-label">
-                                            2.過多
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-7-1" value="3">
-                                        <label class="form-check-label">
-                                            3.過少
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-7-1" value="4">
-                                        <label class="form-check-label">
-                                            4.不適宜
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label"></label>
-                                <div class="col-sm-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-6-2" value="1">
-                                        <label class="form-check-label">
-                                            不需接受訓練
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="m237-6-2" value="2">
-                                        <label class="form-check-label">
-                                            需接受訓練
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
                     </div>
-                </div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header text-white bg-success">
-                            第八部份--其他測驗評估或臨床觀察
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <textarea style="width:100%"></textarea>
-                                </div>
-                            </div>
-                        </div> 
+                    <div class="col-md-12 text-right">
+                        <button class="btn-primary" onclick="saveData()">存檔</button>
+                        <button class="btn-danger" onclick="deleteData()">取消</button>
                     </div>
-                </div>
-
-                <div class="col-md-12 text-right">
-                    <button class="btn-primary" onclick="quit()">存檔</button>
-                    <button class="btn-danger" onclick="deleteData()">取消</button>
-                </div>
-
+                </form>
             </div>
 
         </div>
@@ -868,6 +910,32 @@
             </div>
         </div>
     </div>
+    
+    <!-- delete modal -->
+    <button id="saveButton" type="button" class="btn btn-primary hide" data-toggle="modal" data-target="#saveModal"></button>
+
+    <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">存檔</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        確定要儲存此資料？
+                    </p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="quit()" >確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>
 <script>
     $(document).ready(function(){
@@ -879,9 +947,32 @@
     function deleteData() {
         $("#deleteButton").trigger("click");
     }
+    
+    function saveData() {
+        $("#saveButton").trigger("click");
+    }
+
+    function showSubject() {
+        window.location.href = "subjectManage.html";
+    }
+
+    function showData() {
+        window.location.href = "dataManage.html";
+    }
+
+    /**
+    $('#mr237form').validator().on('submit', function(e) {
+        if (e.isDefaultPrevented()) { // 未驗證通過 則不處理
+            return;
+        } else { // 通过后，送出表单
+            alert("已送出表單");
+        }
+        e.preventDefault(); // 防止原始 form 提交表单
+    });
+    */
 
     function quit() {
-        window.location.href = "mr237.html";
+        window.location.href = "dataManage.html";
     }
 
 </script>
