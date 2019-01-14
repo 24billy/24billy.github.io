@@ -1,0 +1,292 @@
+﻿/*@charset "utf-8";*/
+/***運動員個人資料***/
+.athlete-block {
+    /*max-width:1000px;*/
+    margin:0 auto 20px;
+}
+.baseconts-block,
+.baseconts-block > .bb-content {
+    margin: 0;
+}
+.form-group label, .form-group .col-title {
+    text-align:left;
+}
+.form-group .col-title {
+    width: 60px;
+}
+.form-group .col-data {
+    width: calc(96% - 60px);
+}
+    .btn-timetable {
+    color:#fff;
+    background: #76748a;
+}
+/*****日曆相關設定*****/
+/*月*/
+.mcalendar-block {
+    /*max-width: 1000px;*/
+    margin: 0 auto 15px;
+}
+#mcalendar {
+    /*max-width: 1000px;
+    margin: 0 auto;*/
+}
+
+/*週*/
+.wkcalendar-block{
+    /*max-width: 1000px;*/
+    margin: 0 auto;
+}
+#wkcalendar {
+    /*max-width: 500px;
+    margin: 0 auto;*/
+}
+
+
+/*日*/
+#dcalendar {
+}
+
+
+/*日曆按鈕*/
+.button {
+    /*color: #fff;*/
+    margin-left: 6px;
+    padding: 0 18px;
+    height: 32px;
+    line-height: 32px;
+}
+.button:hover,
+.button:focus{
+    color: #fff;
+}
+.btn-date{
+    background-color: #e79201;
+    color: #fff;
+    font-weight: 600;
+}
+.btn-date:hover{
+    background-color:#cd8100;
+    color: #fff;
+}
+.button.active{
+    background-color: #fff;
+    color: #cd8100;
+    border:1px #cd8100 solid;
+    font-weight: 600;
+    -webkit-box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.5);
+}
+.button.active:hover{
+    background-color: #ab6c00;
+    color: #fff;
+
+    background-color: #fff;
+    color: #cd8100;
+
+}
+.calendar-bar span:first-child .button:first-child{
+    margin-left: 0px;    
+}
+.calendar-bar .calDuring .button:last-child{
+    margin-left: 0px;    
+}
+/*按鈕間距*/
+.wkcalendar-block .btn-wrapper {
+    margin:20px 0 0;
+}
+
+.all-calendar {
+    /*max-width: 1000px;*/
+    margin: 0 auto;
+}
+.calendar-bar{
+    /*max-width: 1000px;*/
+    margin: 0 auto 20px;
+    padding:6px 10px;
+    background-color: #ffb400;
+    vertical-align: middle;
+    color: #fff;
+}
+.calendar-bar span{
+    vertical-align: middle;
+    display: inline-block;
+}
+.caltitle{
+    font-size:24px;
+    margin-left:12px;
+    vertical-align: middle;
+}
+.calduring{
+    font-weight: 600;
+    margin-left:12px;
+}
+.calduring .button{
+    /*font-weight: normal;*/
+    vertical-align: middle;
+}
+.calduring .button.active{
+    /*font-weight: 600;*/
+}
+
+
+/*週-日期*/
+
+/*前次訓練課表*/
+.pratice-block .week {
+    padding: 15px 0 15px;
+}
+.pratice-block .day-num.picked {
+    border-radius: 50%;
+    background-color: #ffb400;
+    color: #fdfdfd;
+}
+.pratice-block .week .arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 10px 0px 10px;
+    border-color: #f9f9f9 transparent transparent transparent;
+    position: absolute;
+    z-index: 10;
+    box-shadow: none;
+    bottom: -15px;
+}
+
+
+
+/*覆寫fullcalendar套件樣式*/
+.fc-view{
+    background-color: #fff;
+}
+.fc-toolbar.fc-header-toolbar{
+    display: none;
+}
+
+.fc .fc-widget-header td,
+.fc .fc-widget-header th{
+    padding: 5px 5px;
+}
+
+.fc-widget-header td,
+.fc-widget-header th,
+.fc-unthemed .fc-widget-header,
+.fc-unthemed .fc-widget-header td,
+.fc-unthemed .fc-widget-header th,
+.fc-unthemed .fc-widget-header thead,
+.fc-unthemed .fc-widget-header .fc-row,
+.fc-unthemed .fc-widget-header .fc-row table{
+    text-transform:uppercase;
+    background-color: #e6e2e7;
+    border-color: #e6e2e7;
+}
+.fc-body thead tr{
+    border-bottom-color: transparent;
+}
+.fc-basic-view .fc-day-number{
+    padding:2px 8px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+
+}
+a[data-goto]{
+    color: #777;/*428bca org*/
+}
+a[data-goto]:hover{
+    text-decoration: none;
+    background-color: #ffb400;/*#2a6496*/
+    background-color: #888;
+    color:#fff;
+}
+.fc-today,
+.fc-unthemed td.fc-today{
+    background-color: #fff5dc;/*e79201 ffb400*/
+    font-weight: bold;
+    color:#333;
+}
+
+.fc-today a[data-goto],
+.fc-unthemed td.fc-today a[data-goto]{
+    color:#333;
+}
+
+.fc-other-month{
+    background-color: #f0f0f0;
+}
+.fc-day-top.fc-other-month{
+    opacity: .3;
+}
+.fc-day-top.fc-other-month a[data-goto]:hover{
+    background-color: #777;/*#2a6496*/
+    color:#fff;
+
+
+}
+
+#wkcalendar .fc-head-container{
+    height:20px;
+}
+#wkcalendar .fc-day-header{
+    display: none;
+}
+
+/*****顏色設定*****/
+/*重量訓練*/
+.train-method01 {
+    background-color: #c90202 !important;
+    border-color: #c90202 !important;
+}
+/*速度、跳躍訓練*/
+.train-method02 {
+    background-color: #3f51b5 !important;
+    border-color: #3f51b5 !important;
+}
+/*節奏跑訓練*/
+.train-method03 {
+    background-color: #f6bf26 !important;
+    border-color: #f6bf26 !important;
+}
+/*循環訓練*/
+.train-method04 {
+    background-color: #0b8043 !important;
+    border-color: #0b8043 !important;
+}
+/*專項技術訓練*/
+.train-method05 {
+    background-color: #448aca !important;
+    border-color: #448aca !important;
+}
+/*比賽*/
+.train-method06 {
+    background-color: #dc6929 !important;
+    border-color: #dc6929 !important;
+}
+
+
+@media screen and (max-width:1024px) {
+    
+
+
+}
+@media screen and (max-width:767px) {
+}
+@media screen and (max-width:560px) {
+    /*日曆按鈕*/
+    .right {
+        margin-left:10px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width:480px) {
+    .wkcalendar-block .btn-wrapper a {
+        margin:0;
+    }
+}
+@media screen and (max-width:375px) {
+    .calendar-bar .button {
+        padding: 0 10px;
+    }
+}

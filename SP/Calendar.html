@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>後台管理 - 速沛運動科技speed&power</title>
+
+    <!--css-->
+    <!--reset css-->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <!--plugin custom css-->
+    <link rel="stylesheet" href="./css/font-awesome/font-awesome.min.css" /><!--font awesome icon-->
+    <link rel="stylesheet" href="./css/pretty-checkbox/pretty.min.css" /><!--for pretty checkbox-->
+    <link rel="stylesheet" href="./css/fullcalendar/fullcalendar.min.css" /><!--for fullcalendar-->
+    <link rel="stylesheet" href="./css/fullcalendar/fullcalendar.print.min.css" media="print" /><!--for fullcalendar-->
+    <!--page custom css-->
+    <link rel="stylesheet" href="./css/layout.css" /><!--for layout common-->
+    <link rel="stylesheet" href="./css/sheets.css" /><!--for page custom-->
+    <link rel="stylesheet" href="./css/calendar.css" /><!--for fullcalendar plugin-->
+    <!--jQuery Script-->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery/jquery-ui.min.js"></script>
+    <!--Bootstrap Script-->
+    <script src="./js/bootstrap.js"></script>
+    <!--for fullcalendar Script-->
+    <script src='./js/fullcalendar/lib/moment.min.js'></script>
+    <script src='./js/fullcalendar/fullcalendar.min.js'></script>
+    <script src='./js/fullcalendar/locale-all.js'></script>
+    <!--custom javaScript-->
+    <script src="./js/gotop.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src='./js/calendar.js'></script><!--for calendar-->
+    <script src="./js/calendar_week.js"></script><!--訓練課表箭頭控制-->
+
+
+    <!-- for IE less than 9 support of HTML5 elements and CSS3 Media Queries  -->
+    <!--[if lt IE 9]>
+    <script src="./js/common/html5shiv.js"></script>
+    <script src="./js/common/respond.src.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="container" class="active">
+        <!--active 代表open-->
+        <header id="head">
+            <div id="sidebar-toggle"><a title="主選單" href="javascript:void(0)"><i class="fa fa-bars" aria-hidden="true"></i></a></div>
+            <a href="Coach_index.html"><img src="./images/logo_all_white.png" alt="速沛運動科技" title="速沛運動科技"></a>
+            <!--<b>&nbsp;-&nbsp;後台管理</b>-->
+            <div class="logout-block">
+                <span class="line-right">組織：xxx國小</span>
+                <span>運動員：名稱/ID</span>
+                <a href="./Login.html" class="button btn-default"><i class="fa fa-sign-out" aria-hidden="true"></i>登出</a>
+            </div>
+        </header>
+
+
+        <div class="container-all-wrapper">
+
+            <div class="container-block active" id="container-wrapper">
+                <!--active 代表open-->
+                <nav class="sidebar-block active" id="sidebar-wrapper">
+                    <!--active 代表open-->
+                    <div class="sidebar-content">
+                        <div class="logout-block">
+                            <div class="user-data">
+                                <span class="line-right">組織：xxx國小</span>
+                                <span>運動員：名稱/ID</span>
+                            </div>
+                            <a href="./Login.html" class="button btn-default"><i class="fa fa-sign-out" aria-hidden="true"></i>登出</a>
+                        </div>
+                        <ul id="accordion" class="sidebar-list">
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-users"></i><span>角色權限管理</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------角色權限管理設定-------->
+                                <ul class="submenu">
+                                    <li><a href="Sheet1_en_01_1.html"><span>角色權限_查詢</span></a></li>
+                                    <li><a href="Sheet1_en_01_2.html"><span>角色權限_新增/編輯</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-cog"></i><span>系統參數設定</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------系統參數設定-------->
+                                <ul class="submenu">
+                                    <li><a href="#"><span>系統參數_查詢</span></a></li>
+                                    <li><a href="#"><span>系統參數_新增/維護</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-clipboard"></i><span>運動員資料維護</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------運動員資料維護設定-------->
+                                <ul class="submenu">
+                                    <li><a href="#"><span>運動員_查詢</span></a></li>
+                                    <li><a href="Create_data.html"><span>運動員_新增/維護</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-clipboard"></i><span>組織資料維護</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------組織資料維護設定-------->
+                                <ul class="submenu">
+                                    <li><a href="#"><span>組織_查詢</span></a></li>
+                                    <li><a href="#"><span>組織_新增/維護</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-clipboard"></i><span>教練資料維護</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------教練資料維護設定-------->
+                                <ul class="submenu">
+                                    <li><a href="#"><span>教練_查詢</span></a></li>
+                                    <li><a href="Create_data.html"><span>教練_新增/維護</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-clipboard"></i><span>運科人員資料維護</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------運科人員資料維護設定-------->
+                                <ul class="submenu">
+                                    <li><a href="#"><span>運科人員_查詢</span></a></li>
+                                    <li><a href="#"><span>運科人員_新增/維護</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-wpforms"></i><span>模板維護</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------模板維護設定-------->
+                                <ul class="submenu">
+                                    <li><a href="#"><span>模板_查詢</span></a></li>
+                                    <li><a href="#"><span>模板_新增/維護</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-list-ol"></i><span>測試項目維護</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------測試項目維護設定-------->
+                                <ul class="submenu">
+                                    <li><a href="#"><span>測試項目_查詢</span></a></li>
+                                    <li><a href="#"><span>測試項目_新增/維護</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-list-ul"></i><span>訓練課程維護</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------訓練課程維護設定-------->
+                                <ul class="submenu">
+                                    <li><a href=""><span>訓練課程_查詢</span></a></li>
+                                    <li><a href="Create_training.html"><span>訓練課程_新增/維護</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-check-square-o"></i><span>功能檢測</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------功能檢測設定-------->
+                                <ul class="submenu">
+                                    <li><a href="Sheet1_en_10_1.html"><span>測試結果表_運動員呈現</span></a></li>
+                                    <li><a href="Sheet1_en_10_2.html"><span>測試結果表_教練呈現</span></a></li>
+                                    <li><a href="#"><span>測試結果表_教練呈現折線圖</span></a></li>
+                                    <li><a href="Sheet1_en_10_4.html"><span>人工資料輸入_查詢</span></a></li>
+                                    <li><a href="#"><span>人工資料輸入_新增選擇人員</span></a></li>
+                                    <li><a href="#"><span>人工資料輸入_輸入測試結果</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-tasks"></i><span>監控建議</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------監控建議設定-------->
+                                <ul class="submenu">
+                                    <li><a href="#"><span>運動員訓練課程查詢</span></a></li>
+                                    <li><a href="Calendar.html"><span>運動員訓練課程行事曆</span></a></li>
+                                    <li><a href="training_table.html"><span>運動員訓練量表</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    <i class="fa fa-shield"></i><span>消息/動態/排行榜</span>
+                                    <b class="fa fa-angle-right"></b>
+                                </a>
+                                <!--------監控建議設定-------->
+                                <ul class="submenu">
+                                    <li><a href="News_list.html"><span>最新消息</span></a></li>
+                                    <li><a href="Message.html"><span>好友動態</span></a></li>
+                                    <li><a href="#"><span>排行榜</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+
+
+                <!--main-contain start-->
+                <div class="main-contain" id="main-wrapper">
+                    <!--麵包屑 共用-->
+                    <div class="bread-crumb">
+                        <i class="fa fa-home"></i>&nbsp;Home&nbsp;<i class="fa fa-angle-right"></i>&nbsp;監控建議&nbsp;<i class="fa fa-angle-right"></i>&nbsp;<span class="bc-page">運動員訓練課程行事曆</span>
+                    </div>
+
+                    <div class="inner-content">
+                        <!--主要內容start-->
+                        <form class="form-block">
+                            <div class="athlete-block">
+                                <h1>運動員訓練課程行事曆</h1>
+                                <!--<h4>副標題</h4>-->
+                                <!-- 內容外框 -->
+                                <div class="baseconts-block">
+                                    <div class="bb-content">
+
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                                <div class="form-group form-inline">
+                                                    <label class="col-title">組織</label>
+                                                    <div class="col-data">
+                                                        XXX國小
+                                                    </div>
+                                                </div>
+                                                <!--//form-group-->
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                                <div class="form-group form-inline">
+                                                    <label class="col-title">運動員</label>
+                                                    <div class="col-data">
+                                                        OOO
+                                                    </div>
+                                                </div>
+                                                <!--//form-group-->
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-6 col-xs-6">
+                                                <div class="form-group form-inline">
+                                                    <label class="col-title">名稱/ID</label>
+                                                    <div class="col-data">
+                                                        CCC
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-6 col-xs-12 alg-right">
+                                                <div class="form-group form-inline">
+                                                    <a href="javascript:void(0);" class="button btn-timetable">訓練課表</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//row end-->
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--//bb-content end-->
+
+                                </div>
+                            </div>
+                            <!-- //內容外框 end -->
+
+                            <div class="clearfix"></div>
+
+
+
+                            <!--日曆 start-->
+                            <div class="calendar-bar">
+                                <div class="left">
+                                    <span>
+                                        <a href="javascript:void(0);" class="button btn-date" id="my-prev-btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                                    </span>
+
+                                    <span>
+                                        <a href="javascript:void(0);" class="button btn-date" id="my-next-btn"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                    </span>
+
+                                    <span class="caltitle">2018&nbsp;|&nbsp;7月</span>
+                                </div>
+
+                                <div class="right">
+                                    <span>
+                                        <a href="javascript:void(0)" id="my-today-btn" class="button btn-date">今天</a>
+                                    </span>
+
+                                    <span class="calduring">
+                                        時間區間：<a href="javascript:void(0)" id="my-month-btn" class="button btn-date active">月</a>
+                                        <a href="javascript:void(0)" id="my-wk-btn" class="button btn-date">週</a>
+                                    </span>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--//calendarBar-->
+
+                            <div class="clearfix"></div>
+
+                            <div class="mcalendar-block">
+                                <div id="mcalendar" class="all-calendar"></div>
+                            </div>
+
+                            <div class="wkcalendar-block">
+                                <div class="pratice-block">
+                                    <div class="pratice">
+                                        <div class="week">
+                                            <div class="day">
+                                                MON
+                                                <p class="day-num picked">12</p>
+                                            </div><div class="day">
+                                                TUE
+                                                <p class="day-num">13</p>
+                                            </div><div class="day">
+                                                WED
+                                                <p class="day-num">14</p>
+                                            </div><div class="day">
+                                                THU
+                                                <p class="day-num">15</p>
+                                            </div><div class="day">
+                                                FRI
+                                                <p class="day-num">16</p>
+                                            </div><div class="day">
+                                                SAT
+                                                <p class="day-num">17</p>
+                                            </div><div class="day">
+                                                SUN
+                                                <p class="day-num">18</p>
+                                            </div>
+                                            <div class="arrow"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="btn-wrapper create-data">
+                                    <a href="javascript:void(0)" class="button btn-primary" data-toggle="modal" data-target="#ScheduleModal"> 訓練行程彈跳</a>
+                                    <a href="javascript:void(0)" class="button btn-primary02"><i class="fa fa-plus-circle" aria-hidden="true"></i> 新增訓練行程</a>
+                                </div>
+                                <div id="wkcalendar" class="all-calendar"></div>
+                            </div>
+
+                            <!--//allCalendar-->
+                            <!--//日曆-->
+
+
+                            <div class="clearfix"></div>
+                            <!--主要內容end-->
+                        </form>
+
+                    </div>
+                </div>
+                <!--main-contain end-->
+
+            </div>
+        </div>
+
+        <div id="go-top"><a title="回頁頂" href="javascript:void(0)">TOP</a></div>
+    </div>
+    <!--container end-->
+    <!--行程dialog-->
+    <div class="modal fade ct-modal" id="ScheduleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">14:30pm | 核心訓練</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-block">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs form-group">
+                                <label class="col-md-3 col-sm-4 col-xs-12">訓練分類</label>
+                                <div class="col-md-7 col-sm-8 col-xs-12">
+                                    <a href="javascript:void(0)" class="button btn-primary02"><p class="col-data">力量-爆發力 </p></a>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs form-group">
+                                <label class="col-md-3 col-sm-4 col-xs-12">訓練階段</label>
+                                <div class="col-md-9 col-sm-8 col-xs-12"><p class="col-data">專案準備期(季中)</p></div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs form-group">
+                                <label class="col-md-3 col-sm-4 col-xs-12">預計訓練量</label>
+                                <div class="col-md-9 col-sm-8 col-xs-12"><p class="col-data">5320</p></div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs form-group">
+                                <label class="col-md-3 col-sm-4 col-xs-12">目標RPE</label>
+                                <div class="col-md-9 col-sm-8 col-xs-12"><p class="col-data">5~6分</p></div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-footer alg-center">
+                    <button type="button" class="button btn-primary02">開始訓練</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+
+</body>
+</html>

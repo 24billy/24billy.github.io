@@ -1,0 +1,313 @@
+/*profile*/
+.profile-outter{
+    height: 435px;
+}
+.profile-outter .cb-content{
+    height: 100%;
+}
+.profile-block{
+    width: calc( 33.33333333333333% - 25px );
+    margin-right: 25px;
+}
+.profile-photo{
+    text-align: center;
+}
+.profile-photo .img{
+    border-radius: 50%;
+    border:1.5px #a6a6a6 solid;
+    background-image: url("../images/profile.png");
+    background-repeat: no-repeat;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+
+}
+.profile-photo h3{
+    margin: 15px 0;
+    color:#252525;
+    font-weight: bold;
+}
+.profile-block .col-title,.profile-block .col-data{
+    line-height: unset;
+    font-weight: normal;
+}
+.profile-block .col-title{
+    width: 28%;
+    text-align: left;
+    margin:0 4% 0 0;
+}
+.profile-block .col-title span{
+    display:inline-block;
+}
+.profile-block .col-title,
+.profile-block .col-data {
+    line-height:20px;
+}
+.profile-block .col-data {
+    width: calc(100% - 28% - 4%);
+}
+
+/*測試狀況*/
+
+.graph-block .cb-content canvas{
+    width: 50%;
+    height: auto;
+    margin: auto;
+} 
+.graph-block table tr td{
+    background-color: #f9f9f9;
+}
+.graph-block table tr td:first-child{
+    background-color: #bfe7f9;
+}
+.graph-block table tr:first-child td:first-child{
+    border-bottom:1px #fdfdfd solid;
+}
+/*雷達圖表*/
+.gb-radar {
+    position:relative;
+    width:80%;
+    height:240px;
+    margin:0 auto 15px;
+}
+/*前次訓練課表*/
+.pratice-block .month-title{
+    background-color: #ffb400;
+    height: 45px;
+}
+.pratice-block .month-title h3{
+    display: inline-block;
+    color: #fdfdfd;
+    padding: 0 16px;
+    margin: 10.5px 0;    
+}
+.month-title h3.year{
+    border-right: 1px #fdfdfd solid;
+}
+.pratice-block .pratice{
+    background-color: #dcdcdc;
+    padding: 20px 0;
+}
+.pratice-block .pratice-project:first-child{
+    margin-left:10px;
+
+}
+.pratice-block .pratice-project{
+    color:#3a3a3a;
+    border: 1px #a6a6a6 solid;
+    background-color: #fdfdfd;
+    padding: 15px 0;
+    display: inline-block;
+    margin: 0;
+    margin-right:10px;
+    width: calc( 20% - 2px - 14px );
+    text-align: center;
+}
+.pratice-block .pratice-project:visited{
+    color:#3a3a3a;
+}
+/*其他運動員*/
+.others-block .option .col-title{
+    width: 85px;
+}
+.others-block p,.others-block .input-group{
+    display: inline-block;
+}
+.others-block .input-group{
+    float: none;
+}
+.others-block .btn-search-index{
+    padding: 0 35px;
+}
+.others-block .row{
+    margin: 0 0 20px;
+}
+.others-block .img-frame{
+    display: inline-block;
+    border: 1px #bfbfbf solid;
+    background-color: #bfbfbf;
+    margin: 0 15px;
+}
+.others-block .switch-display:nth-child(2) .img-frame{
+    background: none;
+}
+.others-block .switch-display:hover{
+    cursor: pointer;
+}
+.others-block .switch-display{
+    display: inline-block;
+}
+.others-block .athlete{
+    margin-right: 3%;
+    width: calc(50% - 4%);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.others-block .athlete::after{
+    content: "";
+    clear: both;
+}
+.others-block .detail .col-title{
+    width: auto;
+    line-height: 20px;
+    margin-bottom: 0;
+}
+.others-block .detail .col-data{
+    line-height: 20px;
+}
+.others-block .athlete img{
+   float: left;
+    
+}
+.others-block .athlete .detail{
+    float: right;
+    width: 50%;
+}
+/*圖片排列*/
+.others-block .js_pics .athlete{
+    width: calc(25% - 4%);
+    text-align: center;
+}
+.others-block .js_pics .athlete .detail{
+    display: none;
+}
+.others-block .js_pics .athlete img{
+    float: none;
+    display: inline-block;
+}
+
+
+/******rwd******/
+
+/*pad*/
+@media screen and (max-width:991px) {
+    body {
+        font-size: 14px;
+    }
+    .profile-block{
+        width: 33.33333333333333%;
+        margin-right: 0;
+    }
+    .content-block > .profile-block{
+        border-radius: 3px 0 0 3px;
+    }
+    .content-block > .graph-block{
+        border-radius: 0 3px 3px 0;
+    }
+    .profile-block .form-group{
+        font-size: 14px;
+        width: 120%;
+    }
+    .profile-block .form-group .col-title{
+        width: auto;
+    }
+    .profile-block .col-data{
+        width: auto;        
+    }
+    .others-block .option .col-title {
+        width: 65px;
+    }
+    .others-block .input-group {
+        padding: 0 5px;
+    }
+    .others-block .btn-search-index {
+        padding: 0 25px;
+    }
+}
+
+
+/*mobile*/
+@media screen and (max-width:767px) {
+    .profile-block,.graph-block{
+        width: 100%;
+    }
+    .profile-block{
+        margin-bottom: 25px;
+    }
+    .profile-outter{
+        height: auto;
+    }
+    .profile-block .form-group{
+        width: 100%;
+    }
+    .pratice-block .pratice-project:first-child{
+        margin-left: 8px;
+    }
+    .pratice-block .pratice-project{
+        margin: 5px 8px;
+        width: calc( 50% - 2px - 17px );
+        padding: 10px 0;
+    }
+    .others-block .option{padding: 0 10px;}    
+    .others-block .row {margin: 0 0 10px;}
+    .others-block  p.mb-nonedisplay{display: none;}
+    .others-block .option .col-title{
+        display: block;
+        font-size: 16px;
+        width: auto;
+        margin: 0 0 10px;
+    }
+    .others-block .input-group{
+        padding: 0 0 10px; 
+        width: 100%;
+    }
+    .others-block .btn-search-index{
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+    .others-block .img-frame{
+        margin: 0 10px 0 0 ;
+    }
+    .others-block .img-frame:last-child{
+        margin-left: 10px;
+    }
+    .others-block .athlete{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .others-block .athlete .detail{
+        width:calc(100% - 160px);
+        margin-left:10px;
+    }
+    .others-block .detail .col-data{
+        text-align: left;
+    }
+    /*圖片排列*/
+    .others-block .js_pics .athlete{
+        width: calc(50% - 4%);
+    }
+    .others-block .js_pics .athlete .detail{
+        display: none;
+    }
+    .others-block .js_pics .athlete img{
+        width: 100%;
+        height: auto;
+    }
+    
+}
+
+
+@media screen and (max-width:480px) {
+    .pratice-block .month-title{height: 35px;}
+    .pratice-block .month-title h3{
+         margin: 6.5px 0;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    /*按鈕位置*/
+    .others-block .switch-display {
+        margin: 0 -3px;
+    }
+    /*圖片排列*/
+    .others-block .athlete img {
+        width:100px;
+        height:auto;
+    }
+    .others-block .athlete .detail {
+        width: calc(100% - 110px);
+    }
+}

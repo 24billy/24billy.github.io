@@ -1,0 +1,391 @@
+.frame{
+    display: inline-block;
+    position: relative;
+    padding-bottom: 52%;
+    height: 0;
+}
+.frame.upper-back,.frame.upper-front{
+    width: 45%;
+    margin: 2%;
+}
+.frame.lower-back,.frame.lower-front{
+    width: 20%;
+    margin: 5%;
+}
+.frame img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.frame  .dot{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffb400;
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+}
+.hover {
+    display: none;
+    z-index: 50;
+}
+/*人體圖文字說明*/
+.explain-sides{
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.explain-LRsides{
+    font-size: 18px;    
+    font-weight: bold;    
+    position: absolute;
+    bottom: -40px;
+}
+.left{
+    left: 20px;
+}
+.right{
+    right: 20px;
+}
+
+/***dot hover***/
+
+/*upper-front*/
+.upper-front .head:hover+.hover-head,
+.upper-front .neck:hover+.hover-neck,
+.upper-front .elbow_l:hover+.hover-elbow_l,
+.upper-front .elbow_r:hover+.hover-elbow_r,
+.upper-front .forearm_l:hover+.hover-forearm_l,
+.upper-front .forearm_r:hover+.hover-forearm_r,
+.upper-front .hand_l:hover+.hover-hand_l,
+.upper-front .hand_r:hover+.hover-hand_r,
+.upper-front .shoulder_l:hover+.hover-shoulder_l,
+.upper-front .shoulder_r:hover+.hover-shoulder_r,
+.upper-front .upper_arm_l:hover+.hover-upper_arm_l,
+.upper-front .upper_arm_r:hover+.hover-upper_arm_r,
+.upper-front .wrist_l:hover+.hover-wrist_l,
+.upper-front .wrist_r:hover+.hover-wrist_r,
+.upper-front .abdomen_l:hover+.hover-abdomen_l,
+.upper-front .abdomen_r:hover+.hover-abdomen_r,
+.upper-front .chest-l:hover+.hover-chest_l,
+.upper-front .chest-r:hover+.hover-chest_r,
+/*upper-back*/
+.upper-back .upper:hover+.hover-upper,
+.upper-back .lower:hover+.hover-lower,
+/*.lower-front*/
+.lower-front .hip_joint_l:hover+.hover-hip_joint_l,
+.lower-front .hip_joint_r:hover+.hover-hip_joint_r,
+.lower-front .knee_l:hover+.hover-knee_l,
+.lower-front .knee_r:hover+.hover-knee_r,
+.lower-front .calf_l:hover+.hover-calf_l,
+.lower-front .calf_r:hover+.hover-calf_r,
+.lower-front .ankle_l:hover+.hover-ankle_l,
+.lower-front .ankle_r:hover+.hover-ankle_r,
+.lower-front .foot_l:hover+.hover-foot_l,
+.lower-front .foot_r:hover+.hover-foot_r,
+.lower-front .thigh_l:hover+.hover-thigh_l,
+.lower-front .thigh_r:hover+.hover-thigh_r,
+/*lower-back*/
+.lower-back .calf_l:hover+.hover-calf_l,
+.lower-back .calf_r:hover+.hover-calf_r,
+.lower-back .hip_l:hover+.hover-hip_l,
+.lower-back .hip_r:hover+.hover-hip_r,
+.lower-back .thight_l:hover+.hover-thight_l,
+.lower-back .thight_r:hover+.hover-thight_r
+{
+    display:inline-block;
+}
+/*����*/
+/*upper-front*/
+.upper-front .head.active + .hover-head,
+.upper-front .neck.active + .hover-neck,
+.upper-front .elbow_l.active + .hover-elbow_l,
+.upper-front .elbow_r.active + .hover-elbow_r,
+.upper-front .forearm_l.active + .hover-forearm_l,
+.upper-front .forearm_r.active + .hover-forearm_r,
+.upper-front .hand_l.active + .hover-hand_l,
+.upper-front .hand_r.active + .hover-hand_r,
+.upper-front .shoulder_l.active + .hover-shoulder_l,
+.upper-front .shoulder_r.active + .hover-shoulder_r,
+.upper-front .upper_arm_l.active + .hover-upper_arm_l,
+.upper-front .upper_arm_r.active + .hover-upper_arm_r,
+.upper-front .wrist_l.active + .hover-wrist_l,
+.upper-front .wrist_r.active + .hover-wrist_r,
+.upper-front .abdomen_l.active + .hover-abdomen_l,
+.upper-front .abdomen_r.active + .hover-abdomen_r,
+.upper-front .chest-l.active + .hover-chest_l,
+.upper-front .chest-r.active + .hover-chest_r,
+/*upper-back*/
+.upper-back .upper.active + .hover-upper,
+.upper-back .lower.active + .hover-lower,
+/*.lower-front*/
+.lower-front .hip_joint_l.active + .hover-hip_joint_l,
+.lower-front .hip_joint_r.active + .hover-hip_joint_r,
+.lower-front .knee_l.active + .hover-knee_l,
+.lower-front .knee_r.active + .hover-knee_r,
+.lower-front .calf_l.active + .hover-calf_l,
+.lower-front .calf_r.active + .hover-calf_r,
+.lower-front .ankle_l.active + .hover-ankle_l,
+.lower-front .ankle_r.active + .hover-ankle_r,
+.lower-front .foot_l.active + .hover-foot_l,
+.lower-front .foot_r.active + .hover-foot_r,
+.lower-front .thigh_l.active + .hover-thigh_l,
+.lower-front .thigh_r.active + .hover-thigh_r,
+/*lower-back*/
+.lower-back .calf_l.active + .hover-calf_l,
+.lower-back .calf_r.active + .hover-calf_r,
+.lower-back .hip_l.active + .hover-hip_l,
+.lower-back .hip_r.active + .hover-hip_r,
+.lower-back .thight_l.active + .hover-thight_l,
+.lower-back .thight_r.active + .hover-thight_r {
+    display: inline-block;
+}
+
+/***dot position***/
+
+/*lower-front*/
+.lower-front .dot.hip_joint_r{left: 27%;top: 10.5%;}
+.lower-front .dot.hip_joint_l{right: 27%;top: 10.5%;}
+.lower-front .dot.thigh_r{left: 0;top: 31%;}
+.lower-front .dot.thigh_l{right: 0;top: 31%;}
+.lower-front .dot.knee_r{left: 18%;bottom: 43%;}
+.lower-front .dot.knee_l{right: 18%;bottom: 43%;}
+.lower-front .dot.calf_r{left: 8%;bottom: 25%;}
+.lower-front .dot.calf_l{right: 6%;bottom: 25%;}
+.lower-front .dot.ankle_r{left: 11%;bottom: 13%;}
+.lower-front .dot.ankle_l{right: 13%;bottom: 13%;}
+.lower-front .dot.foot_r{left: 9%;bottom: 3%;}
+.lower-front .dot.foot_l{right: 9%;bottom: 3%;}
+
+/*lower-back*/
+.lower-back .dot.calf_l{left: 6%;bottom: 27%;}
+.lower-back .dot.calf_r{right: 6%;bottom: 27%;}
+.lower-back .dot.hip_l{left: 3%;top: 13%;}
+.lower-back .dot.hip_r{right: 3%;top: 13%;}
+.lower-back .dot.thight_l{left: 3%;top: 36%;}
+.lower-back .dot.thight_r{right: 3%;top: 36%;}
+
+/*upper-front*/
+.upper-front .dot.head{right: 39%;top: 3.5%;}
+.upper-front .dot.neck{right: 41%;top: 22.5%;}
+.upper-front .dot.chest-r{left: 37%;top: 39%;}
+.upper-front .dot.chest-l{right: 37%;top: 39%;}
+.upper-front .dot.elbow_r{left: 17%;top: 55%;}
+.upper-front .dot.elbow_l{right: 17%;top: 55%;}
+.upper-front .dot.forearm_r{left: 11%;bottom: 26%;}
+.upper-front .dot.forearm_l{right: 11%;bottom: 26%;}
+.upper-front .dot.hand_r{left: 2%;bottom: 2%;}
+.upper-front .dot.hand_l{right: 2%;bottom: 2%;}
+.upper-front .dot.shoulder_r{left: 24%;top: 32%;}
+.upper-front .dot.shoulder_l{right: 24%;top: 32%;}
+.upper-front .dot.upper_arm_r{left: 21%;top: 44%;}
+.upper-front .dot.upper_arm_l{right: 21%;top: 44%;}
+.upper-front .dot.wrist_r{left: 8%;bottom: 15%;}
+.upper-front .dot.wrist_l{right: 8%;bottom: 15%;}
+.upper-front .dot.abdomen_r{left: 38%;bottom: 34%;}
+.upper-front .dot.abdomen_l{right: 38%;bottom: 34%;}
+
+/*upper-back*/
+.upper-back .dot.upper{left: 48%;top: 34.5%;}
+.upper-back .dot.lower{left: 47.5%;bottom: 31.5%;}
+
+/*body select*/
+.body-wrap {
+    display:inline-block;
+    width:100%;
+    text-align:center;
+    margin-bottom:15px;
+}
+.body-select {
+    display:inline-block;
+    width: 260px;
+    line-height: 34px;
+    margin: 15px auto;
+    text-align:center;
+    position:relative;
+}
+.body-select label{
+    margin:0;
+}
+.body-select .select-block{
+    float:right;
+    text-align: center;
+    display: inline-block;
+    width: 10em;
+    background: #9493ad;
+    border:1px solid #75748a;
+    color:#fff;
+    font-weight:bold;
+    border-radius:3px;
+    position:relative;
+}
+.body-select .select-block i{
+    position:absolute;
+    right: 10px;
+    top: 10px;
+}
+.body-select ul{
+    /*float:right;*/
+    display: inline-block;
+    width: 10em;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    border-top:none;
+    border-radius:0 0 3px 3px;
+    margin-top:-1px;
+    position: absolute;
+    top: 37px;
+    right: 0;
+    background: #fafafa;
+    z-index: 1000;
+}
+.body-select ul li a{
+    display:inline-block;
+    width:100%;
+    height:34px;
+    color:#444;
+}
+.body-select ul li a:hover{
+    background:#ffb400;
+    color:#fff;
+}
+#createData03 .sb-content {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+#upper-body,
+#lower-body {
+    display:none;
+}
+#upper-body.active,
+#lower-body.active{
+    display:block;
+}
+/***rwd***/
+/*pad*/
+@media screen and (max-width:1200px) {
+    #createData03 .sb-content {
+        width:100%;
+    }
+}
+@media screen and (max-width:991px) {
+    .upper-back .dot.lower, .upper-back .dot.upper {
+        left: 47.5%;
+    }
+    .frame.upper-back, .frame.upper-front {
+        width: 70%;
+        margin: 0 auto 30px;
+        padding-bottom: 84.5%;
+    }
+    .frame.lower-back, .frame.lower-front {
+        width: 30%;
+        margin: 0 auto 40px;
+        padding-bottom: 80%;
+        display: block;
+    }
+    .frame .dot{
+        width: 17px;
+        height: 17px;
+    }
+    /*人體圖文字說明*/
+    .explain-sides{
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .explain-LRsides{
+        bottom: -15px;
+    }
+}
+/*mobile*/
+@media screen and (max-width:767px) {
+    .frame{
+        display: block;  
+    }
+    .frame.upper-back, .frame.upper-front {
+        width: 90%;
+        margin: 0 auto 40px;
+        padding-bottom: 107.5%;
+    }
+    .frame.lower-back, .frame.lower-front {
+        width: 40%;
+        margin: 0 auto 40px;
+        padding-bottom: 105%;
+    }
+    /*人體圖文字說明*/
+    .explain-sides{
+        top: -10px;
+        left: 80px;
+        transform: none;
+    }
+    .explain-LRsides{
+        bottom: 0;
+    }
+    .explain-sides.lower{
+        left:-20px;
+    }
+    .left{
+        left: -20px;
+    }
+    .right{
+        right: -20px;
+    }
+    /*.frame .dot{
+        width: 17px;
+        height: 17px;
+    }*/
+    
+}
+@media screen and (max-width:480px) {
+    .frame.upper-back, .frame.upper-front {
+        /*width: 100%;
+        padding-bottom: 116.5%;*/
+        width: 120%;
+        padding-bottom: 143.5%;
+        margin-left: -9%;
+    }
+    .frame.lower-back, .frame.lower-front {
+        width: 60%;
+        padding-bottom: 160%;
+    }
+    .upper-back .dot.lower,.upper-back .dot.upper{
+        left: 47%;
+    }
+    .frame .dot{
+        width: 13px;
+        height: 13px;
+    }
+    /***body-select***/
+    .body-select {
+        width:100%;
+        text-align:left;
+    }
+    .body-select label{
+        display:block;
+    }
+    .body-select .select-block,
+    .body-select ul{
+        float:none;
+        width:100%;
+        text-align:center;
+    }
+    .body-select ul{
+        top:71px;
+    }
+    /*人體圖文字說明*/
+    .upper.left{
+        left: 16%;
+    }
+    .upper.right{
+        right: 16%;
+    }
+
+}
+@media screen and (max-width:375px) {
+
+}

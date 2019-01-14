@@ -1,0 +1,543 @@
+﻿/*@charset "utf-8";*/
+/*****Login設定*****/
+html, body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    height: 100%;
+    background: #f9f9f9;
+}
+
+body {
+	height: 100%;
+    font-family: Arial, Helvetica, "微軟正黑體", "新細明體", sans-serif;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+    line-height: 1;
+}
+
+*{ padding:0px; margin:0px;}
+
+.container {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+/*字-對齊*/
+.alg-right{
+    text-align:right !important;
+}
+.alg-left{
+    text-align: left !important;
+}
+.alg-center{
+    text-align: center !important;
+}
+
+
+
+/***增加bootstratp 部分樣式***/
+.form-control:-moz-placeholder {
+  color: #999999;
+}
+
+.form-control::-moz-placeholder {
+  color: #999999;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #999999;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-backface-visibility: hidden;        
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+/*登入頁*/
+.LoginHead {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    background-color: #fff;
+    box-shadow: 0px 2px 3px rgba(20%,20%,40%,0.1);
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 200;
+}
+.LoginHead img {
+    height: 55px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.LoginBackground {
+	background-image: url(../images/loginbackground.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+    padding-top:70px;
+    width: 100%;
+    height:100%;
+	overflow: hidden;
+	background-position: 100% 20%;
+}
+
+.LoginBox {
+    width: 360px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    /*background-color: #00b2ff;*/
+    /*background-color: #00b2ff;*/
+    background-color: #222222;
+    padding: 30px 30px 30px;
+    opacity: 0.9;
+    margin: 6% 10%;
+    color: #fff;
+}
+.LoginBox h2 {
+	margin: 15px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+.LoginBox h2 small {
+    font-size:0.85em;
+}
+.LoginBox h2 .title img {
+    height: 36px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.InputCol {
+	margin: 10px 0px;
+}
+.InputCol label{
+    font-size:1.125em;
+    text-align: right;
+    display: inline-block;
+    width:55px;
+    margin-right:10px;
+    vertical-align: middle;
+}
+.InputCol input {
+    width: calc(95% - 65px - 2px);/*55+10*/
+    height: 36px;/*40px*/
+    border: 1px solid #eee;
+    border-radius: 5px;
+    /*margin-left: 10px;*/
+    font-size: 14px;
+    padding-left: 0px;
+    font-family: Arial, Helvetica, "微軟正黑體", "新細明體", sans-serif;
+}
+.InputCol select,
+.InputCol .form-control {
+    display: inline-block;
+    width: calc(95% - 65px);/*55+10*/
+    height: 36px;/*40px*/
+    /*border: 1px solid #eee;*/
+    border-radius: 5px;
+    font-size: 14px;
+    padding-left: 0px;
+    font-family: Arial, Helvetica, "微軟正黑體", "新細明體", sans-serif;
+}
+.InputCol2{
+    text-align:right;
+    margin-right: 10px;
+}
+.InputCol .labelText{
+    display:inline-block;
+    width: calc(95% - 65px);/*55+10*/
+    font-size: 15px;
+    font-family: Arial, Helvetica, "微軟正黑體", "新細明體", sans-serif;
+    color:#2793d8;/*#f8aa00*/
+}
+.InputCol input,
+.InputCol2 input,
+.InputCol .labelText,
+.InputCol2 .labelText{
+    font-family: Arial, Helvetica, "微軟正黑體", "新細明體", sans-serif;
+}
+
+.colText{
+    display:inline-block;
+    color:#fff;
+}
+.colText a{
+    color:#eea515;
+    font-size:0.9em;
+}
+.colText a:hover{
+    text-decoration: none;
+}
+.InputCol .colTips {
+    margin-left: 1.2em;
+}
+
+
+/*驗證碼*/
+.vcodeCol{
+    
+}
+.vcodeCol input{
+    width: calc(70% - 65px - 2px - 3px);/*65+10*/
+    vertical-align: middle;
+}
+.vcodeImg{
+    margin-left:3px;
+    text-align: right;
+}
+.vcodeImg img{
+    vertical-align: middle;
+    height:38px;
+    max-width:84px;
+}
+
+
+/*密碼*/
+.pwCol{
+    
+}
+.pwCol input{
+    width: calc(95% - 65px - 2px - 18%);
+    vertical-align: middle;
+}
+
+
+/*註冊頁*/
+.SignBox,
+.SignBox02{
+    margin: 4.5% 10%;
+}
+
+
+/*註冊頁-選擇身份*/
+.SignBox02{
+}
+.marginTopSpace{
+    margin-top: 60px;
+}
+/*.SignBox02 .BtnWrapCenter{
+    margin-top:50px;
+}*/
+
+
+/*忘記密碼頁*/
+.ForgetBox{
+
+}
+.ForgetBox h2 small {
+    font-size:0.75em;
+    /*display: block;*/
+}
+.statusCol{
+    margin-top:20px;
+    min-height:40px;
+}
+.statusCol .colText{
+    color:#ff3f00;
+}
+
+
+/*密碼reset頁*/
+.ResetBox{
+
+}
+.ResetBox input{
+
+}
+.ResetBox .InputCol label{
+    width:100px;
+}
+.ResetBox .InputCol input {
+    width: calc(95% - 110px - 2px);/*55+10*/
+}
+.ResetBox .InputCol .labelText,
+.ResetBox .InputCol2 .labelText{
+    width: calc(95% - 110px);/*55+10*/
+}
+
+
+/*分隔線*/
+.lineSpace{
+    margin: 1em 0;
+    border-top: 1px solid #555;
+}
+
+
+/*按鈕相關*/
+.BtnWrapRight{
+    text-align: right;
+    margin-top: 15px;
+}
+.BtnWrapCenter,
+.TdBtnWrap01 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn{    
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0 50px;
+    width:auto;
+    height: 40px;
+    box-sizing: border-box;
+    line-height: 40px;
+    font-size:1.2em;
+    background-color: #111111;
+    border: 0px solid #d7d7d3;
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-family: Arial, Helvetica, "微軟正黑體", "新細明體", sans-serif;
+}
+
+.btn:hover{    
+    background-color: #000000;
+}
+
+.LoginBtn,
+.SignBtn,
+.SignBtnFB,
+.SignBtnGoogle,
+.BackBtn,
+.DefaultBtn{
+    padding:0px 10px;
+    width:calc(100% / 2 - 10px * 2);
+}
+
+.LoginBtn {
+    background-color: #eea515;
+    color: #fff;
+}
+.LoginBtn:hover{    
+    background-color: #ffaa00;
+}
+
+.SignBtn {
+    background-color: #111111;
+    color: #fff;
+}
+.SignBtn:hover{    
+    background-color: #000000;
+}
+
+.SignBtnFB {
+    background-color: #4e69a2;
+    color: #fff;
+}
+.SignBtnFB:hover{    
+    background-color: #3b5998;
+}
+
+.SignBtnGoogle {
+    background-color: #4caf50;
+    color: #fff;
+}
+.SignBtnGoogle:hover{    
+    background-color: #3a8c3f;
+}
+
+.BackBtn {
+    background-color: #666;
+    color: #fff;
+}
+.BackBtn:hover{    
+    background-color: #444;
+}
+
+.DefaultBtn {
+    background-color: #111111;
+    color: #fff;
+}
+.DefaultBtn:hover{    
+    background-color: #000000;
+}
+
+
+/*系統版號*/
+.systemVer{
+    font-size:0.8em;
+    color:#666;
+    margin-top:30px;
+    margin-bottom: -10px;
+    text-align: right;
+    font-family: verdana, Arial;   
+}
+
+
+
+
+/**********Responsive設定**********/
+/***width < 767px PAD***/
+@media screen and (max-width: 1024px) {
+    .LoginBox {
+        margin: 6% auto;
+    }
+}
+/*** width < 767px ***//*手機版開啟*/
+@media screen and (max-width: 767px) { 
+
+    .LoginHead img {
+        height: 45px;
+    }
+    .LoginBox h2 {
+        font-size: 32px;
+    }
+    .LoginBox h2 .title img {
+        height: 26px;
+    }
+}
+
+
+
+/*** width < 590px ***/
+@media screen and (max-width: 590px) {  
+
+    .LoginBox {
+        width: calc(100% - 20%);
+        /*padding: 30px 30px 15px;
+        margin: 10%;*/
+        box-sizing: border-box;
+    }
+    .LoginBox h2 {
+        font-size: 30px;
+    }
+   
+}
+
+
+
+/*** width < 480px ***/
+@media screen and (max-width: 480px) {  
+
+    .LoginBox {
+        width: calc(100% - 14%);
+        padding: 20px 20px 20px;
+        margin: 10% 7%;
+    }
+   
+}
+
+
+
+/*** width < 425px ***/
+@media screen and (max-width: 425px) {  
+
+    .LoginBox {
+        width: calc(100% - 10%);
+        padding: 20px 15px 20px;
+        margin: 10% 5%;
+    }
+
+    /*input.LoginBtn{
+        width:calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }*/
+}
+
+
+
+/*** width < 375px ***/
+@media screen and (max-width: 375px) {  
+
+    .LoginBox {
+        /*width: calc(100% - 10%);*/
+        padding: 20px 10px 20px;
+        /*margin: 10% 5%;*/
+    }
+
+    .InputCol label {
+        font-size: 1em;
+    }
+
+    .vcodeImg img {
+        height: 32px;
+        max-width: 80px;
+    }
+    .pwCol input {
+        width: calc(95% - 65px - 2px);
+    }
+    .colText {
+        margin-top:10px;
+        margin-left:70px;
+    }
+    .statusCol .colText {
+        margin:0;
+    }
+   
+}
+
+
+
+/*** width < 320px ***/
+@media screen and (max-width: 320px) {  
+
+    .vcodeImg img {
+        height: 28px;
+        max-width: 70px;
+    }
+   
+}
